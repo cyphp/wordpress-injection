@@ -1,0 +1,34 @@
+{
+    "name": "cyphp/wordpress-injection",
+    "description": "A simple library to facilitate modern php development for wordpress",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cyveros",
+            "email": "cyveros@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "FS\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "macfja/phar-builder": "@dev"
+    },
+    "scripts": {
+        "build": "phar-builder package composer.json"
+    },
+    "extra": {
+        "phar-builder": {
+            "compression": "GZip",
+            "name": "injection.phar",
+            "output-dir": "./dist/",
+            "entry-point": "./src/Injection/I.php",
+            "skip-shebang": true
+        }
+    }
+}
